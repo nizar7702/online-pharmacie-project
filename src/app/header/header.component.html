@@ -1,0 +1,50 @@
+<div class="site-navbar py-2 fixed-top">
+
+  <div class="search-wrap">
+    <div class="container">
+      <a href="#" class="search-close js-search-close"><span class="icon-close2"></span></a>
+      <form action="#" method="post">
+        <input type="text" class="form-control" placeholder="Search keyword and hit enter...">
+      </form>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="d-flex align-items-center justify-content-between">
+      <div *ngIf="!isLoggedIn()" class="logo">
+        <div class="site-logo">
+          <a [routerLink]="['/']" class="js-logo-clone"><img src="assets/images/pharmacielogo.jpg" width="200px"></a>
+        </div>
+      </div>
+      <div class="user" *ngIf="isLoggedIn()">
+        <p>welcome&nbsp;{{user.firstname}}&nbsp;{{user.lastname}}!</p>
+      </div>
+      <div class="main-nav d-none d-lg-block">
+        <nav class="site-navigation text-right text-md-center" role="navigation">
+          <ul class="site-menu js-clone-nav d-none d-lg-block">
+            <li><a [routerLink]="['/']">Accueil</a></li>
+            <li><a [routerLink]="['/shop']">Magasin</a></li>
+            <li><a [routerLink]="['/quiz']">Quiz</a></li>
+            <li><a [routerLink]="['/about']">About</a></li>
+            <li><a [routerLink]="['/contact']">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div *ngIf="!isLoggedIn()" class="logo">
+        <div class="site-logo">
+          <a class="js-logo-clone" href="http://www.santetunisie.rns.tn/fr/"><img src="assets/images/logotn .png"
+              width="200px"></a>
+        </div>
+      </div>
+      <div *ngIf="isLoggedIn()" class="site-logo">
+        <button (click)='logout()' class="btn btn-success btn-md btn-block">logout</button>
+      </div>
+      <div *ngIf="isLoggedIn()">
+        <div *ngIf="length!=0">
+        <a class="fa" style="font-size:24px" [routerLink]="['/cart']">&#xf07a;</a>
+        <span class='badge badge-warning' id='lblCartCount'> {{length}} </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

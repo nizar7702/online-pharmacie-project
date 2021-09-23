@@ -1,0 +1,171 @@
+<app-header></app-header>
+<div
+  class="site-blocks-cover"
+  style="background-image: url('assets/images/OIP.jpg')"
+>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-7 mx-auto order-lg-2 align-self-center">
+        <div class="site-block-cover-content text-center">
+          <h1>Bienvenue à la pharmacie centrale de tunisie</h1>
+          <p>
+            <a [routerLink]="['/login']" class="btn btn-success px-5 py-3"
+              >Login</a
+            ><br />
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="site-section">
+  <div class="container">
+    <div class="row align-items-stretch section-overlap">
+      <div class="col-md-6 col-lg-4 mb-4 mb-lg-0">
+        <div class="banner-wrap bg-success h-100">
+          <a
+            href="http://www.phct.com.tn/images/DocumentsPCT/actupdf/note_info_protamine_28072020.pdf"
+            class="h-100"
+          >
+            <p>
+              Lettre d'information aux professionnels de santé (PROTAMINE CHOAY
+              1000 U.A.H / ml)
+            </p>
+          </a>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4 mb-4 mb-lg-0">
+        <div class="banner-wrap h-100">
+          <a
+            href="http://www.phct.com.tn/images/DocumentsPCT/actupdf/communique_hydroxychloroquine_chloroquine.pdf"
+            class="h-100"
+          >
+            <p>
+              Communiqué répartition et traçabilité de l' hydroxychloroquine et
+              la chloroquine
+            </p>
+          </a>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4 mb-4 mb-lg-0">
+        <div class="banner-wrap bg-warning h-100">
+          <a
+            href="http://www.phct.com.tn/images/DocumentsPCT/actupdf/note_proff_sante_mephenesine_decontractyl_171019.PDF"
+            class="h-100"
+          >
+            <p>
+              Note aux professionnels de santé : approvisionnement en chlorure
+              de potassium 600mg cp LP
+            </p>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="site-section">
+  <div class="container">
+    <div class="row">
+      <div class="title-section text-center col-12">
+        <h2 class="text-uppercase">Produits populaires</h2>
+      </div>
+    </div>
+
+    <div class="row">
+      <div *ngFor="let product of products?.slice(0,3);" class="col-sm-6 col-lg-4 text-center item mb-4">
+        <a [routerLink]="['/events',product.name]">
+          <img class="imgs" [src]="product.imageurl" alt="Image"
+        /></a>
+        <h3 class="text-dark"><a [routerLink]="['/events',product.name]">{{product.name}}</a></h3>
+        <p class="price">{{product.prix}} DT</p>
+      </div>
+    </div>
+    <div class="row mt-5">
+      <div class="col-12 text-center">
+        <a [routerLink]="['/shop']" class="btn btn-success px-4 py-3"
+          >Voir plus</a
+        >
+      </div>
+    </div>
+  </div>
+</div>
+<div class="site-section">
+  <div class="container">
+    <div class="row">
+      <div class="title-section text-center col-12">
+        <h2 class="text-uppercase">Actualité</h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12 block-3 products-wrap">
+        <div class="nonloop-block-3 no-direction owl-carousel">
+          <div class="testimony">
+            <blockquote>
+              <img
+                src="assets/images/annonce.jpg"
+                alt="Image"
+                class="img-fluid w-25 mb-4 rounded-circle"
+              />
+              <p>
+                Le dépôt RESERVE DES OFFICINES a le plaisir de vous annoncer que
+                les produits LYRICA 150mg Gél. Bt 56 sont disponibles en stock
+              </p>
+            </blockquote>
+            <p>
+              &mdash;le 19/08/2020<br />
+              <a
+                href="http://www.phct.com.tn/images/DocumentsPCT/actupdf/entreeprod250820.pdf"
+                >voir plus</a
+              >
+            </p>
+          </div>
+          <div class="testimony">
+            <blockquote>
+              <img
+                src="assets/images/annonce.jpg"
+                alt="Image"
+                class="img-fluid w-25 mb-4 rounded-circle"
+              />
+              <p>
+                Le dépôt RESERVE DES OFFICINES a le plaisir de vous annoncer que
+                les produits HYDROSOL POLYVITAMINE, PHARMADEVELOPPEMENT Sol.Buv.
+                Fl 20ml et ATIMOS 12µg Sol.P.Inhalation Fl 100Doses (F) sont
+                disponibles en stock;
+              </p>
+            </blockquote>
+
+            <p>
+              &mdash;le 18/08/2020<br />
+              <a
+                href="http://www.phct.com.tn/images/DocumentsPCT/actupdf/entreeprod210820.pdf"
+                >voir plus</a
+              >
+            </p>
+          </div>
+          <div class="testimony">
+            <blockquote>
+              <img
+                src="assets/images/annonce.jpg"
+                alt="Image"
+                class="img-fluid w-25 mb-4 rounded-circle"
+              />
+              <p>
+                Le dépôt RESERVE DES OFFICINES a le plaisir de vous annoncer que
+                les produits EUCARBON Comp. Bt 30 sont disponibles en stock
+              </p>
+            </blockquote>
+            <p>
+              &mdash;le 21/08/2020<br />
+              <a
+                href="http://www.phct.com.tn/images/DocumentsPCT/actupdf/entreeprod250820.pdf"
+                >voir plus</a
+              >
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>

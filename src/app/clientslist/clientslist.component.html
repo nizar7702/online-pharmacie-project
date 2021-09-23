@@ -1,0 +1,53 @@
+<div class="site-section">
+    <div class="container">
+        <div class="row mb-5">
+            <form class="col-md-12" method="post">
+                <div class="site-blocks-table">
+                    <table id="tableid" class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th class="product-name">Name</th>
+                                <th class="product-quantity">email</th>
+                                <th class="product-total">phone</th>
+                                <th class="product-total">adress</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let client of clientslist">
+                                <td>{{client.firstname}}{{client.lastname}}</td>
+                                <td>{{client.email}}</td>
+                                <td>{{client.phone}}</td>
+                                <td>{{client.adress}}</td>
+                                <td>
+                                    <button class="btn btn-success mx-3" (click)="delete(client._id)">delete</button>
+                                </td>
+                                <td>
+                                    <button [routerLink]="['/clientcart',client._id]"
+                                        class="btn btn-success mx-3">client cart</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </form>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="row mb-12">
+                    <div class="col-md-3 mb-3 mb-md-0">
+                        <button [routerLink]="['/contactslist']" class="btn btn-success btn-md btn-block">contacts</button>
+                    </div>
+                    <div class="col-md-3">
+                        <button class="btn btn-success btn-md btn-block" [routerLink]="['/add-med']" >add med</button>
+                    </div>
+                    <div class="col-md-3">
+                        <button class="btn btn-success btn-md btn-block" [routerLink]="['/Meds-list']" >meds list </button>
+                    </div>
+                    <div class="col-md-3">
+                        <button class="btn btn-success btn-md btn-block" (click)='logout()'>Logout</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

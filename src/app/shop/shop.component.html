@@ -1,0 +1,50 @@
+<app-header></app-header>
+<div class="site-section">
+    <div class="container">
+        <div class="choices">
+            <button class="btn btn-success mx-2" (click)='filter("show all")'>show all</button>
+            <button class="btn btn-success mx-2" (click)='filter("rhume")'>rhume</button>
+            <button class="btn btn-success mx-2" (click)='filter("fievre")'>fievre</button>
+            <button class="btn btn-success mx-2" (click)='filter("tete")'>maux au tete</button>
+            <button class="btn btn-success mx-2" (click)='filter("gorge")'>maux au gorge</button>
+            <button class="btn btn-success mx-2" (click)='filter("diarrhée")'>diarrhée</button>
+            <button class="btn btn-success mx-2" (click)='filter("vomis")'>vomissement</button>
+            <button class="btn btn-success mx-2" (click)='filter("mg")'>maux générale</button>
+        </div>
+        <div class="row search">
+            <div class="col-lg-4"></div>
+            <div class="col-lg-4">
+                <div class="input-group rounded">
+                    <input type="search" [(ngModel)]="searchname" (input)="Search()" class="form-control rounded" placeholder="Search" aria-label="Search"
+                      aria-describedby="search-addon" />
+                    <span class="input-group-text border-0" id="search-addon">
+                      <i class="fas fa-search text-success"></i>
+                    </span>
+                  </div>
+            </div>
+            <div class="col-lg-4"></div>
+        </div>
+        <div class="row">
+            <div *ngFor="let product of productsfilter?.slice(compteur1-6,compteur1)" class="select col-sm-6 col-lg-4 text-center item mb-4 rhume ">
+                <a (click)="verification(product.name)"> <img class="imgs" [src]="product.imageurl" alt="Image"></a>
+                <h3 class="text-dark"><a (click)="verification(product.name)">{{product.name}}</a></h3>
+                <p class="price">{{product.prix}} DT</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="conf row mt-5">
+                <div class="col-md-12 text-center">
+                    <div class="site-block-27">
+                        <ul>
+                            <li (click)="previousslide()"><a>&lt;</a></li>
+                            <div *ngFor="let i of tablecompteur">
+                                <li (click)="next(i)"><span>{{i}}</span></li>
+                            </div>
+                            <li (click)="nextslide()"><a>&gt;</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <app-footer></app-footer>

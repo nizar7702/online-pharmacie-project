@@ -1,0 +1,84 @@
+<app-header></app-header>
+<div class="container">
+    <div class="quiz">
+        <h1>QUIZ CORONA</h1>
+        <p>un test approchable qui s'appuie sur les symptomes du corona virus
+                  <br>merci de faire un test PCR pour bien vérifier
+        </p>
+    </div>
+    <div class="questions">
+        <p class="question">Avez vous de la fievre??</p>
+        <div class="choix">
+            <input type="radio" id="fievre" name="a">&nbsp;&nbsp;oui<br>
+            <input type="radio" id="nfievre" name="a">&nbsp;&nbsp;non
+        </div>
+    </div>
+    <div class="questions">
+        <p class="question">Avez vous des maux de tete??</p>
+        <div class="choix">
+            <input type="radio" id="tete" name="b">&nbsp;&nbsp;oui<br>
+            <input type="radio" id="ntete" name="b">&nbsp;&nbsp;non
+        </div>
+    </div>
+    <div class="questions">
+        <p class="question">Avez vous des maux au gorge??</p>
+        <div class="choix">
+            <input type="radio" id="gorge" name="c">&nbsp;&nbsp;oui<br>
+            <input type="radio" id="ngorge" name="c">&nbsp;&nbsp;non
+        </div>
+    </div>
+    <div class="questions">
+        <p class="question">Avez vous une toux??</p>
+        <div class="choix">
+            <input type="radio" id="toux" name="e">&nbsp;&nbsp;oui<br>
+            <input type="radio" id="ntoux" name="e">&nbsp;&nbsp;non
+        </div>
+    </div>
+    <div class="questions">
+        <p class="question">Avez vous des douleurs musculaires et une fatigue inhabituelle??</p>
+        <div class="choix">
+            <input type="radio" id="douleur" name="f">&nbsp;&nbsp;oui<br>
+            <input type="radio" id="ndouleur" name="f">&nbsp;&nbsp;non
+        </div>
+    </div>
+    <div class="questions">
+        <p class="question">Avez vous de la diarrhée??</p>
+        <div class="choix">
+            <input type="radio" id="diar" name="g">&nbsp;&nbsp;oui<br>
+            <input type="radio" id="ndiar" name="g">&nbsp;&nbsp;non
+        </div>
+    </div>
+    <div class="questions">
+        <p class="question">Avez vous perdu l'appetit de manger??</p>
+        <div class="choix">
+            <input type="radio" id="appetit" name="h">&nbsp;&nbsp;oui<br>
+            <input type="radio" id="nappetit"name="h">&nbsp;&nbsp;non
+        </div>
+    </div>
+    <div class="questions">
+        <p class="question">Avez vous déja vomi??</p>
+        <div class="choix">
+            <input type="radio" id="vomi" name="i">&nbsp;&nbsp;oui<br>
+            <input type="radio" id="nvomi" name="i">&nbsp;&nbsp;non
+        </div>
+    </div>
+    <div class="questions">
+        <p class="question">Avez vous perdu de l'odorat et du gout??</p>
+        <div class="choix">
+            <input type="radio" id="o&g" name="j">&nbsp;&nbsp;oui<br>
+            <input type="radio" id="no&g"name="j">&nbsp;&nbsp;non
+        </div>
+    </div>
+    <div class="questions">
+        <p class="question">Avez vous perdu une difficulté de respiration??</p>
+        <div class="choix">
+            <input type="radio" id="resp" name="k">&nbsp;&nbsp;oui<br>
+            <input type="radio" id="nresp" name="k">&nbsp;&nbsp;non
+        </div>
+    </div>
+    <div class="button col-4">
+        <button class="btn btn-success px-5 py-3" (click)='quiz()'>confirmer votre choix</button>
+        <div class="col-4"></div>
+    </div>
+</div>
+<app-footer></app-footer>

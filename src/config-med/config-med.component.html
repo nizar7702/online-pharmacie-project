@@ -1,0 +1,355 @@
+<div class="site-wrap">
+    <div class="site-blocks-cover" style="background-image: url('assets/images/OIP.jpg');">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-7 mx-auto order-lg-2 align-self-center">
+                    <div class="site-block-cover-content text-center">
+                        <h1>Config-med</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="site-section">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-12">
+
+                    <form [formGroup]="newmed" (ngSubmit)="saveMed()" action="#" method="post">
+
+                        <div class="p-3 p-lg-5 border">
+                            <div class="form-group row">
+                                <div class="col-md-12">
+                                    <label class="text-black">Image <span class="text-danger">*</span></label>
+                                    <input type="file" (change)="onFileSelected($event)" class="form-control"
+                                        formControlName="image">
+                                    <div *ngIf="image.touched && image.invalid">
+                                        <small *ngIf="image.errors.required" class="text-danger">image is
+                                            required<br></small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-md-6">
+                                    <label class="text-black">Name <span class="text-danger">*</span></label>
+                                    <input type="text" class="form-control" formControlName="name">
+                                    <div *ngIf="name.touched && name.invalid">
+                                        <small *ngIf="name.errors.required" class="text-danger">name is
+                                            required<br></small>
+                                        <small *ngIf="name.errors.minlength" class="text-danger">firstname must
+                                            contain
+                                            3 caracters at least<br></small>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="text-black">Speciality <span class="text-danger">*</span></label>
+                                    <input type="text" class="form-control" formControlName="Speciality">
+                                    <div *ngIf="Speciality.touched && Speciality.invalid">
+                                        <small *ngIf="Speciality.errors.required" class="text-danger">Speciality is
+                                            required<br></small>
+                                        <small *ngIf="Speciality.errors.minlength" class="text-danger">firstname must
+                                            contain
+                                            3 caracters at least<br></small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-md-6">
+                                    <label class="text-black">Dosage<span class="text-danger">*</span></label>
+                                    <input type="text" class="form-control" formControlName="Dosage">
+                                    <div *ngIf="Dosage.touched && Dosage.invalid">
+                                        <small *ngIf="Dosage.errors.required" class="text-danger">Dosage is
+                                            required<br></small>
+                                        <small *ngIf="Dosage.errors.minlength" class="text-danger">firstname must
+                                            contain
+                                            3 caracters at least<br></small>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="text-black">Forme<span class="text-danger">*</span></label>
+                                    <input type="text" class="form-control" formControlName="Forme">
+                                    <div *ngIf="Forme.touched && Forme.invalid">
+                                        <small *ngIf="Forme.errors.required" class="text-danger">Forme is
+                                            required<br></small>
+                                        <small *ngIf="Forme.errors.minlength" class="text-danger">firstname must
+                                            contain
+                                            3 caracters at least<br></small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-md-6">
+                                    <label class="text-black">Presentation<span class="text-danger">*</span></label>
+                                    <input type="text" class="form-control" formControlName="Presentation">
+                                    <div *ngIf="Presentation.touched && Presentation.invalid">
+                                        <small *ngIf="Presentation.errors.required" class="text-danger">Presentation is
+                                            required<br></small>
+                                        <small *ngIf="Presentation.errors.minlength" class="text-danger">firstname must
+                                            contain
+                                            3 caracters at least<br></small>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="text-black">Conditionnement-primaire<span
+                                            class="text-danger">*</span></label>
+                                    <input type="text" class="form-control" formControlName="Conditionnement_primaire">
+                                    <div *ngIf="Conditionnement_primaire.touched && Conditionnement_primaire.invalid ">
+                                        <small *ngIf="Conditionnement_primaire.errors.required"
+                                            class="text-danger">Conditionnement_primaire is
+                                            required<br></small>
+                                        <small *ngIf="Conditionnement_primaire.errors.minlength"
+                                            class="text-danger">firstname must
+                                            contain
+                                            3 caracters at least<br></small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-md-6">
+                                    <label class="text-black">Specification<span class="text-danger">*</span></label>
+                                    <input type="text" class="form-control" formControlName="Specification">
+                                    <div *ngIf="Specification.touched && Specification.invalid">
+                                        <small *ngIf="Specification.errors.required" class="text-danger">Specification
+                                            is
+                                            required<br></small>
+                                        <small *ngIf="Specification.errors.minlength" class="text-danger">firstname must
+                                            contain
+                                            3 caracters at least<br></small>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="text-black">DCI<span class="text-danger">*</span></label>
+                                    <input type="text" class="form-control" formControlName="DCI">
+                                    <div *ngIf="DCI.touched && DCI.invalid">
+                                        <small *ngIf="DCI.errors.required" class="text-danger">DCI is
+                                            required<br></small>
+                                        <small *ngIf="DCI.errors.minlength" class="text-danger">firstname must
+                                            contain
+                                            3 caracters at least<br></small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-md-6">
+                                    <label class="text-black">Classement_VEIC<span class="text-danger">*</span></label>
+                                    <input type="text" class="form-control" formControlName="Classement_VEIC">
+                                    <div *ngIf="Classement_VEIC.touched && Classement_VEIC.invalid">
+                                        <small *ngIf="Classement_VEIC.errors.required"
+                                            class="text-danger">Classement_VEIC is
+                                            required<br></small>
+                                        <small *ngIf="Classement_VEIC.errors.minlength" class="text-danger">firstname
+                                            must
+                                            contain
+                                            3 caracters at least<br></small>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="text-black">Class_Therapeutic<span
+                                            class="text-danger">*</span></label>
+                                    <input type="text" class="form-control" formControlName="Class_Therapeutic">
+                                    <div *ngIf="Class_Therapeutic.touched && Class_Therapeutic.invalid">
+                                        <small *ngIf="Class_Therapeutic.errors.required"
+                                            class="text-danger">Class_Therapeutic is
+                                            required<br></small>
+                                        <small *ngIf="Class_Therapeutic.errors.minlength" class="text-danger">firstname
+                                            must
+                                            contain
+                                            3 caracters at least<br></small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-md-6">
+                                    <label class="text-black">Sous_Classe<span class="text-danger">*</span></label>
+                                    <input type="text" class="form-control" formControlName="Sous_Classe">
+                                    <div *ngIf="Sous_Classe.touched && Sous_Classe.invalid">
+                                        <small *ngIf="Sous_Classe.errors.required" class="text-danger">Sous_Classe is
+                                            required<br></small>
+                                        <small *ngIf="Sous_Classe.errors.minlength" class="text-danger">firstname must
+                                            contain
+                                            3 caracters at least<br></small>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="text-black">Laboratoire<span class="text-danger">*</span></label>
+                                    <input type="text" class="form-control" formControlName="Laboratoire">
+                                    <div *ngIf="Laboratoire.touched && Laboratoire.invalid">
+                                        <small *ngIf="Laboratoire.errors.required" class="text-danger">Laboratoire is
+                                            required<br></small>
+                                        <small *ngIf="Laboratoire.errors.minlength" class="text-danger">firstname must
+                                            contain
+                                            3 caracters at least<br></small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-md-6">
+                                    <label class="text-black">Tableau<span class="text-danger">*</span></label>
+                                    <input type="text" class="form-control" formControlName="Tableau">
+                                    <div *ngIf="Tableau.touched && Tableau.invalid">
+                                        <small *ngIf="Tableau.errors.required" class="text-danger">Tableau is
+                                            required<br></small>
+                                        <small *ngIf="Tableau.errors.minlength" class="text-danger">firstname must
+                                            contain
+                                            3 caracters at least<br></small>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="text-black">Duration_of_conservation<span
+                                            class="text-danger">*</span></label>
+                                    <input type="text" class="form-control" formControlName="Duration_of_conservation">
+                                    <div *ngIf="Duration_of_conservation.touched && Duration_of_conservation.invalid">
+                                        <small *ngIf="Duration_of_conservation.errors.required"
+                                            class="text-danger">Duration_of_conservation is
+                                            required<br></small>
+                                        <small *ngIf="Duration_of_conservation.errors.minlength"
+                                            class="text-danger">firstname must
+                                            contain
+                                            3 caracters at least<br></small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-md-6">
+                                    <label class="text-black">Indication<span class="text-danger">*</span></label>
+                                    <input type="text" class="form-control" formControlName="Indication">
+                                    <div *ngIf="Indication.touched && Indication.invalid">
+                                        <small *ngIf="Indication.errors.required" class="text-danger">Indication is
+                                            required<br></small>
+                                        <small *ngIf="Indication.errors.minlength" class="text-danger">firstname must
+                                            contain
+                                            3 caracters at least<br></small>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="text-black">Generic_Princeps<span class="text-danger">*</span></label>
+                                    <input type="text" class="form-control" formControlName="Generic_Princeps">
+                                    <div *ngIf="Generic_Princeps.touched && Generic_Princeps.invalid">
+                                        <small *ngIf="Generic_Princeps.errors.required"
+                                            class="text-danger">Generic_Princeps is
+                                            required<br></small>
+                                        <small *ngIf="Generic_Princeps.errors.minlength" class="text-danger">firstname
+                                            must
+                                            contain
+                                            3 caracters at least<br></small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-md-6">
+                                    <label class="text-black">AMM<span class="text-danger">*</span></label>
+                                    <input type="text" class="form-control" formControlName="AMM">
+                                    <div *ngIf="AMM.touched && AMM.invalid">
+                                        <small *ngIf="AMM.errors.required" class="text-danger">AMM is
+                                            required<br></small>
+                                        <small *ngIf="AMM.errors.minlength" class="text-danger">firstname must
+                                            contain
+                                            3 caracters at least<br></small>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="text-black">Date_AMM<span class="text-danger">*</span></label>
+                                    <input type="text" class="form-control" formControlName="Date_AMM">
+                                    <div *ngIf="Date_AMM.touched && Date_AMM.invalid">
+                                        <small *ngIf="Date_AMM.errors.required" class="text-danger">Date_AMM is
+                                            required<br></small>
+                                        <small *ngIf="Date_AMM.errors.minlength" class="text-danger">firstname must
+                                            contain
+                                            3 caracters at least<br></small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-md-6">
+                                    <label class="text-black">symptome 1<span class="text-danger">*</span></label>
+                                    <input list="browsers" class="form-control" formControlName="symptome1">
+                                    <datalist id="browsers">
+                                        <option value="show all">
+                                        <option value="rhume">
+                                        <option value="fievre">
+                                        <option value="tete">
+                                        <option value="gorge">
+                                        <option value="diarrhée">
+                                        <option value="vomis">
+                                        <option value="mg">
+                                    </datalist>
+                                    <div *ngIf="symptome1.touched && symptome1.invalid">
+                                        <small *ngIf="symptome1.errors.required" class="text-danger">symptome 1 is
+                                            required<br></small>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="text-black">symptome 2<span class="text-danger">*</span></label>
+                                    <input list="browsers" class="form-control" formControlName="symptome2">
+                                    <datalist id="browsers">
+                                        <option value="show all">
+                                        <option value="rhume">
+                                        <option value="fievre">
+                                        <option value="tete">
+                                        <option value="gorge">
+                                        <option value="diarrhée">
+                                        <option value="vomis">
+                                        <option value="mg">
+                                    </datalist>
+                                    <div *ngIf="symptome2.touched && symptome2.invalid">
+                                        <small *ngIf="symptome2.errors.required" class="text-danger">symptome 2 is
+                                            required<br></small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-md-6">
+                                    <label class="text-black">symptome 3<span class="text-danger">*</span></label>
+                                    <input list="browsers" class="form-control" formControlName="symptome3">
+                                    <datalist id="browsers">
+                                        <option value="show all">
+                                        <option value="rhume">
+                                        <option value="fievre">
+                                        <option value="tete">
+                                        <option value="gorge">
+                                        <option value="diarrhée">
+                                        <option value="vomis">
+                                        <option value="mg">
+                                    </datalist>
+                                    <div *ngIf="symptome3.touched && symptome3.invalid">
+                                        <small *ngIf="symptome3.errors.required" class="text-danger">symptome 3 is
+                                            required<br></small>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="text-black">prix<span class="text-danger">*</span></label>
+                                    <input type="string" class="form-control" formControlName="prix">
+                                    <div *ngIf="prix.touched && prix.invalid">
+                                        <small *ngIf="prix.errors.required" class="text-danger">prix is
+                                            required<br></small>
+                                        <small *ngIf="prix.errors.minlength" class="text-danger">firstname must
+                                            contain
+                                            3 caracters at least<br></small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-lg-12">
+                                    <input type="submit" class="btn btn-success btn-lg btn-block" value="Add med"
+                                        [disabled]="newmed.invalid">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-lg-6">
+                                    <button class="btn btn-success btn-md btn-block" [routerLink]="['/clientslist']" >clients list</button>
+                                
+                                </div>
+                                <div class="col-lg-6">
+                                    <button class="btn btn-success btn-md btn-block" [routerLink]="['/Meds-list']" >Meds list</button>
+                                
+                                </div>
+
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

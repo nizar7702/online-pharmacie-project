@@ -1,0 +1,210 @@
+<div *ngIf="sign == false">
+    <app-header></app-header>
+</div>
+<div class="site-wrap">
+    <div class="site-blocks-cover" style="background-image: url('assets/images/OIP.jpg');">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-7 mx-auto order-lg-2 align-self-center">
+                    <div class="site-block-cover-content text-center">
+                        <h1>Login</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="site-section">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-12">
+
+                    <form [formGroup]="login" (ngSubmit)="saveUser()" action="#" method="post">
+
+                        <div class="p-3 p-lg-5 border">
+                            <div class="form-group row">
+                                <div class="col-md-12">
+                                    <label for="c_email" class="text-black">Email<span
+                                            class="text-danger">*</span></label>
+                                    <input type="email" class="form-control" id="c_email" name="c_email" placeholder=""
+                                        formControlName="email">
+                                    <div *ngIf="email.touched && email.invalid">
+                                        <small *ngIf="email.errors.required" class="text-danger">email is
+                                            required<br></small>
+                                        <small *ngIf="email.errors.email" class="text-danger">email is
+                                            invalid!!<br></small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-md-12">
+                                    <label for="c_email" class="text-black">password<span
+                                            class="text-danger">*</span></label>
+                                    <input type="password" class="form-control" id="c_email" name="c_email"
+                                        placeholder="" formControlName="password">
+                                    <div *ngIf="password.touched && password.invalid">
+                                        <small *ngIf="password.errors.required" class="text-danger">password is
+                                            required<br></small>
+                                        <small *ngIf="password.errors.minlength" class="text-danger">password must
+                                            contain
+                                            6 caracters at least<br></small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-md-4">
+                                    <a [routerLink]="['/register']" class="text-success">create an acount??</a>
+                                </div>
+                                <div class="col-md-4">
+                                    <a  data-toggle="modal" class="text-success"
+                                    (click)="open(content)">Forget password??</a>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-md-12">
+                                    <input type="submit" class="btn btn-success btn-lg btn-block" value="Login"
+                                        [disabled]="login.invalid" >
+                                </div>
+                            </div>
+                            <ng-template #content let-modal>
+                                <div class="modal-header">
+                                  <h4 class="modal-title" id="modal-basic-title">Enter your email</h4>
+                                  <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+                                    <span aria-hidden="true">&times;</span>
+                                  </button>
+                                </div>
+                                <form [formGroup]="emailverification" action="#" method="post">
+                                    <div class="modal-body">
+                                        <div class="p-3 p-lg-5 border">
+                                            <div class="form-group row">
+                                                <div class="col-md-12">
+                                                    <input type="email" class="form-control" id="c_email"
+                                                        name="c_email" placeholder=""
+                                                        formControlName="emailverif">
+                                                    <div *ngIf="emailverif.touched && emailverif.invalid">
+                                                        <small *ngIf="emailverif.errors.required"
+                                                            class="text-danger">Email is
+                                                            required<br></small>
+                                                        <small *ngIf="emailverif.errors.email"
+                                                            class="text-danger">you must enter an email
+
+                                                            <br></small>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <input type="submit" class="btn btn-success" value="verify" (click)="verifyemail()" (click)="modal.close('Save click')"
+                                            [disabled]="emailverification.invalid">
+                                    </div>
+                                </form>
+                              </ng-template>
+                            <ng-template #content1 let-modal>
+                                <div class="modal-header">
+                                    <h4 class="modal-title" id="modal-basic-title">Enter the verification code
+                                        send to your
+                                        email:</h4>
+                                    <button type="button" class="close" aria-label="Close"
+                                        (click)="modal.dismiss('Cross click')">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <form [formGroup]="verifycode" action="#" method="post">
+                                    <div class="modal-body">
+                                        <div class="p-3 p-lg-5 border">
+                                            <div class="form-group row">
+                                                <div class="col-md-12">
+                                                    <input type="text" class="form-control"
+                                                        formControlName="Activationcode">
+                                                    <div *ngIf="Activationcode.touched && Activationcode.invalid">
+                                                        <small *ngIf="Activationcode.errors.required"
+                                                            class="text-danger">Activation code is required
+                                                        </small>
+                                                        <small *ngIf="Activationcode.errors.maxlength"
+                                                            class="text-danger">Activation must 6 numbers max
+                                                            <br></small>
+                                                        <small *ngIf="Activationcode.errors.pattern"
+                                                            class="text-danger">Activation must contain only
+                                                            numbers
+                                                            <br></small>
+                                                        <small *ngIf="Activationcode.errors.minlength"
+                                                            class="text-danger">Activation must contain 6
+                                                            numbers min
+                                                            <br></small>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <div class="col-md-4">
+                                                    <button class="btn btn-success" (click)="sendemail()">resend
+                                                        email??</button>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="modal-footer">
+                                        <input type="submit" class="btn btn-success" value="save" (click)="codeverification()" (click)="modal.close('Save click')"
+                                            [disabled]="verifycode.invalid">
+                                    </div>
+                                </form>
+                            </ng-template>
+                            <ng-template #content2 let-modal>
+                                <div class="modal-header">
+                                    <h4 class="modal-title" id="modal-basic-title">Enter the new password</h4>
+                                    <button type="button" class="close" aria-label="Close"
+                                        (click)="modal.dismiss('Cross click')">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <form [formGroup]="newpass" action="#" method="post">
+                                    <div class="modal-body">
+                                        <div class="p-3 p-lg-5 border">
+                                            <div class="form-group row">
+                                                <div class="col-md-12">
+                                                    <label for="c_subject" class="text-black">new password<span
+                                                        class="text-danger">*</span></label>
+                                                    <input type="password" class="form-control" id="c_email" name="c_email"
+                                                        placeholder="" formControlName="newpassword">
+                                                    <div *ngIf="newpassword.touched && newpassword.invalid">
+                                                        <small *ngIf="newpassword.errors.required"
+                                                            class="text-danger">newpassword is
+                                                            required<br></small>
+                                                        <small *ngIf="newpassword.errors.minlength"
+                                                            class="text-danger">newpassword
+                                                            must
+                                                            contain 6 caracters at least<br></small>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <label for="c_subject" class="text-black">confirm password<span
+                                                            class="text-danger">*</span></label>
+                                                    <input type="password" class="form-control" id="c_repassword" name="c_repassword"
+                                                        formControlName="ConfirmPassword">
+                                                    <div *ngIf="ConfirmPassword.touched && ConfirmPassword.invalid">
+                                                        <small *ngIf="ConfirmPassword.errors.required" class="text-danger">repassword is
+                                                            required<br></small>
+                                                    </div>
+                                                    <div *ngIf="ConfirmPassword.valid && ConfirmPassword.value!=newpassword.value"
+                                                        class="text-danger">The passwords entred do not match
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <input type="submit" class="btn btn-success" value="save" (click)="updatepassword()" (click)="modal.close('Save click')"
+                                            [disabled]="newpass.invalid">
+                                    </div>
+                                </form>
+                            </ng-template>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>

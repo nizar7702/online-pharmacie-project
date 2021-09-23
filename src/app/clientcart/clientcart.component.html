@@ -1,0 +1,42 @@
+<div class="site-section">
+    <div class="container">
+        <div class="row mb-5">
+            <form class="col-md-12" method="post">
+                <div class="site-blocks-table">
+                    <table id="tableid" class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th class="product-name">Produit</th>
+                                <th class="product-quantity">quantity</th>
+                                <th class="product-total">Prix</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let data of medicaments[0][1]">
+                                <td class="product-name">
+                                    <h2 id="meda" class="h5 text-black">{{data.medicament}}</h2>
+                                </td>
+                                <td>{{data.qte}}</td>
+                                <td class="prix">{{data.prix}}&nbsp;DT</td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td colspan="2">Total</td>
+                                <td>{{prixtotale}}&nbsp;DT</td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </form>
+        </div>
+        <div class="form-group row">
+            <div class="col-lg-4"></div>
+            <div class="col-lg-4">
+              <button class="btn btn-success btn-md btn-block" [routerLink]="['/clientslist']">clients list</button>
+      
+            </div>
+            <div class="col-lg-4"></div>
+          </div>
+    </div>
+</div>
