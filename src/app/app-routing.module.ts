@@ -1,7 +1,8 @@
+import { AuthuserGuard } from './guards/authuser.guard';
 import { EditMedComponent } from './edit-med/edit-med.component';
-import { MedslistCOMPONENT } from './../medslist/meds-list.component';
+import { MedslistCOMPONENT } from './medslist/meds-list.component';
 import { DetailsMedComponent } from './details-med/details-med.component';
-import { ConfigMedComponent } from './../config-med/config-med.component';
+import { ConfigMedComponent } from './config-med/config-med.component';
 import { Component, NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HeaderComponent } from './header/header.component';
@@ -16,8 +17,7 @@ import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { ClientslistComponent } from './clientslist/clientslist.component';
 import { ClientcartComponent } from './clientcart/clientcart.component';
-import{AuthuserGuard}from'./authuser.guard';
-import{AuthadminGuard}from'./authadmin.guard';
+import{AuthadminGuard}from'./guards/authadmin.guard';
 import { ContactslistComponent } from './contactslist/contactslist.component';
 const routes: Routes = [
   {

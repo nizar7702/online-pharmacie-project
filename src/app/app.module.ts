@@ -1,8 +1,8 @@
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { EditMedComponent } from './edit-med/edit-med.component';
 import { DetailsMedComponent } from './details-med/details-med.component';
-import { MedslistCOMPONENT } from './../medslist/meds-list.component';
-import { ConfigMedComponent } from './../config-med/config-med.component';
+import { MedslistCOMPONENT } from './medslist/meds-list.component';
+import { ConfigMedComponent } from './config-med/config-med.component';
 import { ProductsService } from './products.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';

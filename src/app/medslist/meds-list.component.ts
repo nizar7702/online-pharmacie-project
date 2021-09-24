@@ -1,6 +1,6 @@
+import { ProductsService } from './../products.service';
 import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
-import { ProductsService } from './../app/products.service';
 import { Component, OnInit } from '@angular/core';
 import { Product } from 'src/app/product';
 @Component({

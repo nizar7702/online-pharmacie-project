@@ -1,8 +1,8 @@
+import { Product } from 'src/app/product';
+import { ProductsService } from './../products.service';
 import { ToastrService } from 'ngx-toastr';
 import { UrlTree, Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
-import { ProductsService } from './../app/products.service';
-import { Product } from './../app/product';
 import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 @Component({
